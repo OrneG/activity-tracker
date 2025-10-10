@@ -1,0 +1,68 @@
+@import '../variables.css';
+
+button {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.875rem;
+    border: none;
+    color: var(--dark);
+    background-color: var(--lilac);
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: 100%;
+        background: linear-gradient(120deg,
+                transparent,
+                var(--color),
+                transparent);
+        transform: translateX(-100%);
+        transition: 0.8s;
+    }
+
+    &:hover {
+        &:before {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.button-container .button-icon {
+    font-size: 1.5rem;
+    background-color: var(--teal);
+    color: var(--dark);
+    max-width: 3.5rem;
+}
+
+.close-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--lilac);
+}
+
+.form .login-button, .close-icon, .button-container .button-icon, .close-button {
+    border: none;
+}
+
+.form {
+    .close-button, .login-button {
+        color: var(--teal);
+    }
+    .login-button {
+        background-color: var(--dark);
+        max-width: 11.6rem;
+    }
+    .close-button {
+        background-color: var(--dark);
+        border: 0.2em solid var(--teal);
+        min-width: 3.4375rem;
+    }
+}

@@ -1,0 +1,20 @@
+:root {
+    color-scheme: light dark;
+    --dark: hsl(0, 0%, 5%);
+    --light: hsl(0, 0%, 95%);
+    --teal: rgb(0, 158, 142);
+    --green: rgb(33, 248, 115);
+    --blue: rgb(26, 178, 248);
+    --red: rgb(255, 24, 24);
+    --orange: rgb(252, 128, 46);
+    --yellow: rgb(229, 249, 74);
+    --border: light-dark(hsl(0, 0%, 70%), hsl(0, 0%, 30%));
+    --bg-dark: light-dark(hsl(0, 0%, 90%), hsl(0, 0%, 0%));
+    --bg: light-dark(var(--light), var(--dark));
+    --bg-light: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 10%));
+    --text: light-dark(var(--dark), var(--light));
+    --text-muted: light-dark(hsl(0, 0%, 30%), hsl(0, 0%, 70%));
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg)60%, var(--bg-light));
+    --highlight: hsl(0, 0%, 60%);
+}
