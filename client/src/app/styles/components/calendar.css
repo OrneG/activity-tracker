@@ -1,0 +1,50 @@
+.calendar {
+    position: relative;
+    padding: 24px;
+    background: var(--gradient);
+    border-radius: 16px;
+    border: solid 1px var(--border);
+    border-top: solid 1px var(--highlight);
+    box-shadow: 0px 4px 20px var(--bg-dark);
+
+    &:hover {
+        background: var(--gradient-hover);
+    }
+}
+
+.calendar-matrix {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+.week-days {
+    width: 380px;
+    justify-content: space-around;
+    list-style: none;
+    margin-bottom: 12px;
+    padding: 0;
+    font-weight: 700;
+}
+
+.activity-type {
+    position: absolute;
+    right: 4%;
+    top: 4%;
+}
+
+select,
+::picker(select) {
+    appearance: base-select;
+    font-size: 14px;
+    padding: 8px 12px;
+    color: light-dark(var(--dark), var(--light));
+    border: solid 2px var(--light);
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 600px) {
+    .week-days {
+        width: 800px;
+    }
+}

@@ -1,0 +1,15 @@
+@import './components/buttons.css';
+@import './components/inputs.css';
+@import './components/calendar-section.css';
+@import './components/calendar.css';
+@import './pages/layout.css';
+
+body, main, .calendar-section, .week-days {
+    display: flex;
+}
+
+body, main {
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}

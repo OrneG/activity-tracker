@@ -1,0 +1,33 @@
+body, .calendar-section {
+    align-items: center;
+    justify-content: center;
+}
+
+body, main, .calendar-section {
+    align-items: center;
+}
+
+body {
+    color: var(--light);
+    background: var(--dark);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+main {
+    justify-content: space-evenly;
+    width: 80%;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+h2 {
+    margin-bottom: 40px;
+}
