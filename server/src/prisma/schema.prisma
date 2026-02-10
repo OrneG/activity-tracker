@@ -14,23 +14,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Activity {
-  id    Int    @id @default(autoincrement())
-  title String
-  type  String
-}
-
-model Record {
-  id    Int    @id @default(autoincrement())
-  calification Int
-  date         DateTime
-  type         String
-
-  @@unique([date, type])
-}
-
 model User {
   id    Int    @id @default(autoincrement())
   name  String
   email String @unique
+}
+
+model Activity {
+  id     Int    @id @default(autoincrement())
+  title  String
+  type   String
+  userId Int
+}
+
+model Record {
+  id           Int      @id @default(autoincrement())
+  calification Int
+  date         DateTime
+  activityId   Int
+
+  @@unique([date, activityId])
 }

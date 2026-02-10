@@ -4,7 +4,7 @@ export const activityController = {
     async getAll(req, res) {
         try {
             const { userId } = req.params;
-            const activities = await activityService.getactivitysByUserId(Number(userId));
+            const activities = await activityService.getActivities(Number(userId));
             res.json(activities);
         } catch (err) {
             res.status(500).json({ error: err.message });
@@ -14,7 +14,7 @@ export const activityController = {
     async create(req, res) {
         try {
             const { userId } = req.params;
-            const activity = await activityService.createactivityForUser(Number(userId), req.body);
+            const activity = await activityService.createActivity(Number(userId), req.body);
             res.status(201).json(activity);
         } catch (err) {
             res.status(400).json({ error: err.message });

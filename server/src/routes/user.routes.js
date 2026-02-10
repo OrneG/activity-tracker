@@ -1,9 +1,10 @@
 import express from "express";
-import { activityController } from "../controllers/activity.controller.js";
+import { userController } from "../controllers/user.controller.js";
 
 const router = express.Router();
 
-router.get("/:userId/activities", activityController.getAll);
-router.post("/:userId/activities", activityController.create);
+router.get("/", userController.getAll);
+
+router.post("/", userController.create);
 
 export default router;

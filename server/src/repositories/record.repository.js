@@ -10,11 +10,6 @@ export const recordRepository = {
         })
     },
     async create(data) {
-        return prisma.record.create({
-            data: {
-                ...data,
-                activity: { connect: { id: activityId } },
-            },
-        });
+        return prisma.record.create({ data });
     },
 };

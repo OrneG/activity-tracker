@@ -1,9 +1,10 @@
 import express from "express";
-import { recordController } from "../controllers/record.controller.js";
+import { activityController } from "../controllers/activity.controller.js";
 
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
-router.get("/:userId/records", recordController.getAll);
-router.post("/:userId/records", recordController.create);
+router.get("/", activityController.getAll);
+
+router.post("/", activityController.create);
 
 export default router;

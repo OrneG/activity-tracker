@@ -6,8 +6,10 @@ import userRouter from "./routes/user.routes.js";
 const app = express();
 
 app.use(express.json());
-app.use("/activities", activityRouter);
-app.use("/records", recordRouter);
 app.use("/users", userRouter);
+
+app.use("/users/:userId/activities", activityRouter);
+
+app.use("/activities/:activityId/records", recordRouter);
 
 export default app;

@@ -1,14 +1,14 @@
 import { recordRepository } from "../repositories/record.repository.js";
 
 export const recordService = {
-    async getAllRecords(userId) {
-        return recordRepository.findAll(userId);
+    async getRecords(activityId) {
+        return recordRepository.findAll(activityId);
     },
 
-    async createRecord(userId, data) {
-        if (!data.calification || !data.date || !data.type) {
+    async createRecord(activityId, data) {
+        if (!data.calification || !data.date) {
             throw new Error("Missing required fields");
         }
-        return recordRepository.create(userId, data);
+        return recordRepository.create({ ...data, activityId });
     },
 };

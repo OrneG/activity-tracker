@@ -1,14 +1,14 @@
 import { activityRepository } from "../repositories/activity.repository.js";
 
 export const activityService = {
-    async getAllActivities() {
-        return activityRepository.findAll();
+    async getActivities(userId) {
+        return activityRepository.findAll(userId);
     },
 
-    async createactivity(data) {
+    async createActivity(userId, data) {
         if (!data.title || !data.type) {
             throw new Error("Missing required fields");
         }
-        return activityRepository.create(data);
+        return activityRepository.create({ ...data, userId });
     },
 };
