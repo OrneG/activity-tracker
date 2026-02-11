@@ -4,7 +4,11 @@ export const recordController = {
     async getAll(req, res) {
         try {
             const { activityId } = req.params;
-            const records = await recordService.getRecords(Number(activityId));
+            const { year, month } = req.query;
+            const records = await recordService.getRecords(Number(activityId), {
+                year,
+                month,
+            });
             res.json(records);
         } catch (err) {
             res.status(500).json({ error: err.message });

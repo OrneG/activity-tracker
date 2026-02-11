@@ -1,26 +1,22 @@
 'use server'
-import { getDateString, getTodayDate} from "./date-converter";
 
-const baseUrl = 'http://190.2.56.166:8080'
+const baseUrl = 'http://localhost:3000'
 
-export async function getActivities(userId: number, type: string) {
-    console.log('Activity filter by:', type);
-    const response = await fetch(`${baseUrl}/users/${userId}/activities?type=${type}`);
+export async function getActivities(userId: number) {
+    const response = await fetch(`${baseUrl}/users/${userId}/activities`);
 
     const data = await response.json();
     console.log('Activities:', data);
     return data;
 }
 
-export async function createActivity(type: string, userId: number) {
-    const activityEntryDate = getDateString(getTodayDate());
+export async function createActivity(type: string, title: string) {
     const requestParameters = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             'type': type,
-            'date': activityEntryDate,
-            'userId': userId})
+            'title': title})
         };
 
     await fetch(`${baseUrl}/activities`, requestParameters);

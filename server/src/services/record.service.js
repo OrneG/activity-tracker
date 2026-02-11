@@ -1,8 +1,8 @@
 import { recordRepository } from "../repositories/record.repository.js";
 
 export const recordService = {
-    async getRecords(activityId) {
-        return recordRepository.findAll(activityId);
+    async getRecords(activityId, filters) {
+        return recordRepository.findAll(activityId, filters);
     },
 
     async createRecord(activityId, data) {
